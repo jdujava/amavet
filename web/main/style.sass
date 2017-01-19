@@ -1,6 +1,100 @@
 @import url('reset.css')
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,400&subset=latin-ext')
+@import url('https://fonts.googleapis.com/css?family=Dosis')
+$pink:  #E91E63
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans')
+body
+  font-family: 'Dosis', sans-serif
+nav
+  position: absolute
+  width: 100%
+  height: 60px
+  display: flex
+  justify-content: center
+nav a
+  font-size: 1.2em
+  padding: 25px 15px
+  box-sizing: content-box
+  width: 100px
+  text-align: center
+a
+  cursor: pointer
+.a_border
+  background-color: $pink
+  opacity: 0
+  position: absolute
+  height: 3px
+  top: 75px
+  width: 130px
+.nav_hover
+  opacity: 1
+  transform: translateY(-10px)
+  transition: transform .4s, opacity .8s
+.button
+  position: absolute
+  top: 50%
+  left: 25%
+  width: 130px
+  height: 50px
+  border: 1px solid black
 
-@import url('https://fonts.googleapis.com/css?family=Text+Me+One')
+.button span
+  position: absolute
+  width: 100%
+  text-align: center
+  top: 30%
+  cursor: pointer
+    //landing page
+.page_1
+  position: absolute
+  width: 100%
+  height: 80%
+.page_2
+  width: 100%
+  height: 80%
+  position: absolute
+  top: 80%
+.page_3
+  width: 100%
+  height: 80%
+  position: absolute
+  top: 160%
+.pic_1,.scroll_trigger
+  position: absolute
+  top: 250px
+  width: 580px
+  height: 320px
+  background-color: green
+.scroll_trigger
+  background-color: white
+  z-index: 2
+.smooth
+  width: 0px
+  transition: all 1s
+.right_text
+  position: absolute
+  left: 55%
+  width: 580px
+  top: 250px
+  border: 1px solid black
+  height: 320px
+  z-index: -5
+.right_sheet
+  position: absolute
+  width: 7px
+  height: 0px
+  background-color: $pink
+.right_text h1
+  font-size: 2em
+  position: absolute
+  top: 50px
+  left: 25px
+  transition: all 1s
+.right_text p
+  left: 30px
+  top: 110px
+  position: relative
+  font-size: 1.5em
+  transition: all 1s
+.comin_in_hot
+  color: black
+  transform: translateY(-25px)

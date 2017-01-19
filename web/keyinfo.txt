@@ -1,1 +1,4 @@
-No takze do toho tu shitu sa budu pisat nejake zakladne veci ako je farba textov a take srandy 
+Main colors: cierna, biela, #E91E63
+Fonty: @import url('https://fonts.googleapis.com/css?family=Dosis');
+	font-family: 'Dosis', sans-serif;
+Bolo by idealne keby sa responzivita riesila hned ked sa najde nedostatok 
