@@ -2,13 +2,7 @@ $(document).ready(function(){
   var win_offset;
   var this_offset;
   var win_height = $(window).height();
-  var i = 1;
-  setTimeout(function() {
-    $('.page_1 .scroll_trigger').addClass('smooth');
-  },1000);
-  $('.page_1 .right_sheet').animate({height: '80px'}, 1000);
-  $('.page_1 h1').addClass('comin_in_hot');
-  $('.page_1 p').addClass('comin_in_hot');
+
   $('nav a').hover(function() {
 		var ppos = $(this).offset();
 		$('.a_border').css("left",ppos.left);
@@ -18,16 +12,24 @@ $(document).ready(function(){
   });
 
   $(window).on('scroll', function() {
-      this_offset = $('.scroll_trigger').eq(i).offset().top;
-      win_offset = $(window).scrollTop() + win_height;
+    win_offset = $(window).scrollTop() + win_height;
+    //pre kazdu sekciu kontrolujem, ci je scrollnuta
+    $('.page').each(function(i){
+      var this_offset = $('.scroll_trigger').eq(i).offset().top;
       if(win_offset-250>this_offset){
-        setTimeout(function(integer) {
-          $('.scroll_trigger').eq(integer).addClass('smooth');
-        }.bind(null, i), 1000);
-        $('.right_sheet').eq(i).animate({height: '80px'}, 1000);
-        $('.page_'+ (i+1)+ ' h1').addClass('comin_in_hot');
-        $('.page_'+ (i+1)+ ' p').addClass('comin_in_hot');
-        i++;
+        //ak je, popridavam classy
+        setTimeout(function() {
+          $('.scroll_trigger').eq(i).addClass('smooth');
+        }, 1000);
+        //teraz pridavam classu celej sekcii, nie osobitne
+        $('.page').eq(i).addClass('comin_in_hot');
+      }else {
+        //ak nie, odoberiem classy
+        setTimeout(function() {
+          $('.scroll_trigger').eq(i).removeClass('smooth');
+        }, 1000);
+        $('.page').eq(i).removeClass('comin_in_hot');
       }
+    });
   });
 });
